@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.shieldBasePath =
+        "https://static.c.huk24.de/shield/components/1.5/lib";
+    </script>
+    <script
+      type="module"
+      src="https://static.c.huk24.de/shield/components/1.5/lib/lib.esm.js"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://static.c.huk24.de/shield/css-framework/1.5/css/all.css"
+    />
+    <!-- all in one mandanten css -->
+    <link
+      rel="stylesheet"
+      href="https://static.c.huk24.de/shield/themes/1.5/huk24/theme.css"
+    />
+    <!-- oder einzelne css files -->
+    <link
+      rel="stylesheet"
+      href="https://static.c.huk24.de/shield/themes/1.5/huk24/tokens.css"
+    />
+  </head>
+  <style>
+    :root {
+      --container-width: 800px;
+    }
+
+    .for-preload {
+      --icon-color: red;
+
+      /* -webkit-mask-image: url("icon.svg");
+      mask-image: url("icon.svg");
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: contain;
+      mask-size: contain; */
+    }
+    .icon {
+      width: 24px;
+      height: 24px;
+    }
+    .icon2 {
+      width: 33px;
+      height: 33px;
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      background-color: currentColor;
+      mask-image: var(--icon-url);
+    }
+  </style>
+  <body class="s:m-4">
+    <div style="color: blueviolet">
+      <div class="icon2" style="--icon-url: url(icon2.svg)"></div>
+    </div>
+
+    <!-- 
+
+    validation
+    describedby, 2-x describedby
+    komplex -> beschreibung vorher, label, fieldset, legend, ...?
+
+    explizit vs implizit labels
+    https://austingil.com/how-to-build-html-forms-right-accessibility/
+  -->
+    <div class="s:container">
+      <form method="get">
+        <div style="--col: 6">
+          <s-text-field aria-describedby="desc-banner" minlength="5" full-width>
+            <div slot="label">Welcher Gegenstand wurde beschädigt?</div>
+          </s-text-field>
+        </div>
+        <div style="--col: 6">
+          <s-text-field full-width>
+            <div slot="label">Wie teuer war der Gegenstand?</div>
+          </s-text-field>
+        </div>
+
+        <fieldset title="gfsdf">
+          <legend class="s:my-4">Aufbewahrungsort</legend>
+          <p id="desc-para" aria-live="assertive">
+            <strong>Aufbewahrungsort benennen</strong>
+            <s-icon name="info"></s-icon><br />
+            Bitte wählen Sie nachfolgend noch den Aufbewahrungsort der
+            beschädigten Gegenstände zum Schadenzeitpunkt aus. Eine
+            Mehrfachauswahl ist möglich.
+          </p>
+          <s-banner
+            class="s:my-4"
+            icon="true"
+            id="desc-banner"
+            leading-text="Leading-Text"
+            supporting-text="Das ist der Supporting-Text"
+          >
+            <s-icon
+              slot="icon"
+              variant="outlined"
+              name="info"
+              size="lg"
+            ></s-icon>
+          </s-banner>
+          <div class="s:d-grid">
+            <div style="--col: 12">
+              <s-choice-group>
+                <span slot="label">Wo ist es passiert?</span>
+                <s-checkbox value="Innerhalb des Gebäudes"
+                  ><span slot="label">Innerhalb des Gebäudes</span></s-checkbox
+                >
+                <s-checkbox value="im Garten"
+                  ><span slot="label">im Garten</span></s-checkbox
+                >
+                <s-checkbox value="auf der Terasse"
+                  ><span slot="label">auf der Terasse</span></s-checkbox
+                >
+                <s-checkbox value="sonstwo"
+                  ><span slot="label">sonstwo</span></s-checkbox
+                >
+                <span slot="helptext"
+                  >Sie möchten den Schaden noch detaillierter beschreiben? Dies
+                  ist nicht nötig, Sie haben jedoch im letzten Schritt die
+                  Möglichkeit uns weitere Hinweise zukommen zu lassen.</span
+                >
+              </s-choice-group>
+            </div>
+          </div>
+          <s-button class="s:my-4" value="absenden" type="submit"
+            >Absenden</s-button
+          >
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>
