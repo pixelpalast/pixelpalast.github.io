@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Tarifrechner Test</title>
     <script>
       window.shieldBasePath =
         "https://static.c.huk24.de/shield/components/1.5/lib";
@@ -44,15 +44,17 @@
     https://austingil.com/how-to-build-html-forms-right-accessibility/
   -->
 
-    <div class="s:container">
-      <div class="s:py-8 s:prose">
-        <h1>Tarifrechner Haftpflicht</h1>
-        <p>
-          hier sollten vielleicht grunsätzliche infos stehen die ein blinder
-          nicht erfassen kann. zb dass alle felder (*) reqiured sind.
-        </p>
+    <header aria-label="Tarifrechner Header">
+      <div class="s:container">
+        <div class="s:py-8 s:prose">
+          <h1>Tarifrechner Haftpflicht</h1>
+          <p>
+            hier sollten vielleicht grunsätzliche infos stehen die ein blinder
+            nicht erfassen kann. zb dass alle felder (*) reqiured sind.
+          </p>
+        </div>
       </div>
-    </div>
+    </header>
     <div class="s:container s:prose">
       <form method="get">
         <div class="contentblock s:my-4 s:p-4 s:border-xs">
@@ -121,7 +123,7 @@
               ></small>
             </h2>
           </div>
-          <fieldset title="">
+          <fieldset title="" aria-describedby="desc-para test3 desc-banner">
             <p id="desc-para" aria-live="assertive">
               <h3>nochmal ne headline</h3>
               Bitte wählen Sie nachfolgend noch den Aufbewahrungsort der
@@ -160,7 +162,7 @@
                   <s-checkbox value="sonstwo"
                     ><span slot="label">sonstwo</span></s-checkbox
                   >
-                  <span slot="helptext"
+                  <span slot="helptext" id="test3"
                     >Sie möchten den Schaden noch detaillierter beschreiben?
                     Dies ist nicht nötig, Sie haben jedoch im letzten Schritt
                     die Möglichkeit uns weitere Hinweise zukommen zu
@@ -173,7 +175,7 @@
               >Absenden</s-button
             >
           </fieldset>
-                    <s-dialog
+          <s-dialog
             id="answer_detail2"
             close-button="false"
             dismissible="true"
@@ -196,10 +198,6 @@
           if (comp) comp.open();
         });
       });
-      // window.addEventListener("sClick", (e) => {
-      //   const comp = document.getElementById("answer_detail");
-      //   comp.open();
-      // });
     </script>
   </body>
 </html>
