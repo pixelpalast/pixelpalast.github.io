@@ -1,0 +1,59 @@
+---
+import fs from 'fs';
+import path from 'path';
+
+import Head from "./../partials/head.astro";
+
+import './../../public/assets/fonts/huktest.css';
+
+// Pfad zum Icon-Ordner
+const iconsPath = './public/assets/icons';
+
+interface Icon {
+	name: string;
+	path: string;
+}
+// Funktion, die rekursiv SVG-Dateien im Ordner durchsucht
+function getIcons(dirPath: string, basePath = ''): Array<Icon> {
+  const entries = fs.readdirSync(dirPath, { withFileTypes: true });
+  let icons: Array<Icon> = [];
+
+  for (const entry of entries) {
+    const fullPath = path.join(dirPath, entry.name);
+    const relativePath = path.join(basePath, entry.name);
+
+    if (entry.isDirectory()) {
+      // Wenn ein Ordner gefunden wird, rekursiv weiter durchsuchen
+      icons = icons.concat(getIcons(fullPath, relativePath));
+    } else if (entry.name.endsWith('.svg')) {
+      icons.push({
+        name: path.parse(entry.name).name,
+        path: `${iconsPath.replace('./public', '')}/${relativePath}`, // Pfad relativ zum "public" Ordner
+      });
+    }
+  }
+  return icons;
+}
+
+// Lade die Icons aus dem Ordner
+const icons = getIcons(iconsPath);
+
+
+---
+
+<html lang="de">
+	<Head />
+	<body>
+		<div class="s:container">
+			<h1 class="s:my-8">showing {icons.length} icons </h1>
+			<div class="s:d-grid" style="max-width: 100%; --g-cols: 6;">
+				{icons.map((icon) => (
+					<div class="s:text-center s:border-xs s:p-4">
+            <i class={`s:d-flex s:justify-center demo-icon icon-${icon.name}`} style="font-size: 24px;"></i>
+            <code style="font-size: 10px;">{icon.name}</code>
+					</div>
+				))}
+			</div>
+		</div>
+	</body>
+</html>
