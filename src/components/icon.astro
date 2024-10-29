@@ -1,18 +1,19 @@
 ---
-import Layout from "./../layout/default.astro";
 import { getAll } from "../api/icons";
 
 const iconsPath = "./public/assets/icons";
 const icons = getAll(iconsPath);
 const { mode } = Astro.props;
 
-import fontcss from './../../public/assets/fonts/huktest.css';
+if (mode === 'webfont') {
+  import './../../public/assets/fonts/huktest.css';
+}
 
 ---
 
 { mode === 'webfont' && (
-    <style>    
-      @import url('./../../public/assets/fonts/huktest.css');
+    
+    <style>
       .demo-icon {
       }
       .demo-icon::before {
