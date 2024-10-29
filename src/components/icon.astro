@@ -6,8 +6,10 @@ const icons = getAll(iconsPath);
 const { mode } = Astro.props;
 
 if (mode === 'webfont') {
-  import './../../public/assets/fonts/huktest.css';
-}
+    import('./../../public/assets/fonts/huktest.css').then((fs) => {
+    // use fs
+  });
+} 
 
 ---
 
