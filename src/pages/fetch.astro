@@ -1,0 +1,46 @@
+---
+import Head from "./../partials/head.astro";
+import { getAll, type Icon } from "../api/icons";
+
+// Pfad zum Icon-Ordner
+const iconsPath = "./public/assets/icons";
+// Lade die Icons aus dem Ordner
+const icons = getAll(iconsPath);
+
+
+---
+<style>    
+.icon-mask {
+	width: 24px;
+	height: 24px;
+	mask-repeat: no-repeat;
+	mask-size: contain;
+	background-color: currentColor;
+	mask-image: var(--icon-url);
+}
+</style>
+
+<html lang="de">
+	<Head />
+	<body>
+		<div class="s:container">
+			<h1 class="s:my-8">showing {icons.length} icons </h1>
+			<div class="s:d-grid" style="max-width: 100%; --g-cols: 6; color: blueviolet">
+				{icons.map((icon) => (
+					<div class="s:text-center s:d-flex s:flex-col s:border-xs s:p-4">
+						<s-icon class="s:mx-a" size="md" name={icon.name.split('.')[0]} variant={icon.name.split('.')[1]}></s-icon>
+						<code style="font-size: 10px;">{icon.name.split('.')[0]}</code>
+						{/* <code style="font-size: 10px;">{icon.name}</code> */}
+					</div>
+				))}
+			</div>
+		</div>
+	</body>
+</html>
+
+					{/*
+					<div class="s:text-center s:border-xs s:p-4">
+						<img class="s:mx-a" width="24" height="24" src={icon.path} alt={icon.name} />
+						<code style="font-size: 10px;">{icon.name}</code>
+					</div>
+					 */}
