@@ -1,0 +1,335 @@
+---
+
+---
+
+<div class="s:container s:mt-6">
+  <s-breadcrumb>
+    <ol>
+      <li>
+        <a href="/" title="Startseite">
+          <s-icon aria-label="Startseite" name="home" size="xs"></s-icon>
+        </a>
+      </li>
+
+      <li>
+        <a href="/level-1">Level 1</a>
+      </li>
+
+      <li>
+        <a href="/level-2">Level 2</a>
+      </li>
+
+      <li>
+        <a href="/level-3">Level 3</a>
+      </li>
+
+      <li>
+        <a href="/level-4">Level 4</a>
+      </li>
+
+      <li>
+        <a href="/level-5">Level 5</a>
+      </li>
+
+      <li>
+        <a href="/level-6">Level 6</a>
+      </li>
+    </ol>
+
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@id": "/",
+              "name": ""
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@id": "/level-1",
+              "name": "Level 1"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@id": "/level-2",
+              "name": "Level 2"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@id": "/level-3",
+              "name": "Level 3"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "item": {
+              "@id": "/level-4",
+              "name": "Level 4"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "item": {
+              "@id": "/level-5",
+              "name": "Level 5"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 7,
+            "item": {
+              "@id": "/level-6",
+              "name": "Level 6"
+            }
+          }
+        ]
+      }
+    </script>
+  </s-breadcrumb>
+  <hr />
+
+  <s-expansion-panels>
+    <s-expansion-panel divider="true">
+      <span class="s:text-h6 s:pl-4" slot="headline">
+        With custom Spacing via Slots
+      </span>
+      <s-icon slot="iconClosed" class="s:pr-4" name="add" size="md"></s-icon>
+      <s-icon slot="iconOpen" class="s:pr-4" name="close" size="md"></s-icon>
+      <div class="s:px-4" slot="content">
+        <p>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+          ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+          sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+          et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+          takimata sanctus est Lorem ipsum dolor sit amet.
+        </p>
+
+        <ol>
+          <li>Lorem ipsum dolor sit amet</li>
+          <li>Lorem ipsum dolor sit amet</li>
+          <li>Lorem ipsum dolor sit amet</li>
+          <li>Lorem ipsum dolor sit amet</li>
+          <li>Lorem ipsum dolor sit amet</li>
+          <li>
+            Lorem ipsum dolor sit amet
+            <ol>
+              <li>Lorem ipsum dolor sit amet</li>
+              <li>Lorem ipsum dolor sit amet</li>
+              <li>Lorem ipsum dolor sit amet</li>
+              <li>
+                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem
+                ipsum dolor sit amet. Lorem ipsum dolor sit amet Lorem ipsum
+                dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit
+                amet Lorem ipsum dolor sit amet
+              </li>
+              <li>Lorem ipsum dolor sit amet</li>
+              <li>Lorem ipsum dolor sit amet</li>
+              <li>Lorem ipsum dolor sit amet</li>
+              <li>Lorem ipsum dolor sit amet</li>
+              <li>Lorem ipsum dolor sit amet</li>
+              <li>Lorem ipsum dolor sit amet</li>
+              <li>Lorem ipsum dolor sit amet</li>
+            </ol>
+          </li>
+          <li>Lorem ipsum dolor sit amet</li>
+          <li>Lorem ipsum dolor sit amet</li>
+          <li>Lorem ipsum dolor sit amet</li>
+          <li>Lorem ipsum dolor sit amet</li>
+          <li>Lorem ipsum dolor sit amet</li>
+        </ol>
+      </div>
+    </s-expansion-panel>
+  </s-expansion-panels>
+
+  <hr />
+
+  <s-tabs
+    style="--tab-indicator-color: red; --tab-text-color-active: blue;"
+    value="content-block-3"
+  >
+    <s-tab-item
+      value="content-block-1"
+      id="tab-item-1"
+      aria-controls="content-block-1"
+    >
+      Tab Text 01
+    </s-tab-item>
+    <s-tab-item
+      value="content-block-2"
+      id="tab-item-2"
+      aria-controls="content-block-2"
+    >
+      Tab Text 02
+      <s-icon slot="additionalContent" name="edit" variant="outlined" size="md"
+      ></s-icon>
+    </s-tab-item>
+    <s-tab-item
+      value="content-block-3"
+      id="tab-item-3"
+      aria-controls="content-block-3"
+    >
+      <s-icon name="home" size="md"></s-icon>
+      Tab Text 03
+      <s-icon name="baby-changing-station" size="xs"></s-icon>
+    </s-tab-item>
+    <s-tab-item value="content-block-4" id="tab-item-4" disabled="true">
+      Tab Text 04
+    </s-tab-item>
+    <s-tab-item
+      value="content-block-5"
+      id="tab-item-5"
+      aria-controls="content-block-5"
+    >
+      <s-badge content="23" inline="true" color="accent">Tab Text 05</s-badge>
+    </s-tab-item>
+    <s-tab-item
+      value="content-block-6"
+      id="tab-item-6"
+      aria-controls="content-block-3"
+    >
+      Tab Text 06
+    </s-tab-item>
+  </s-tabs>
+  <div
+    class="s:py-5 s:d-hidden"
+    role="tabpanel"
+    aria-labelledby="tab-item-1"
+    id="content-block-1"
+  >
+    <h1 class="s:text-h6">Block 1</h1>
+
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+    <a href="#">sed diam nonumy eirmod</a>
+    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+    vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+    no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+    amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+    et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+    sanctus est Lorem ipsum dolor sit amet.
+  </div>
+  <div
+    class="s:py-5 s:d-hidden"
+    role="tabpanel"
+    aria-labelledby="tab-item-2"
+    id="content-block-2"
+  >
+    <h1 class="s:text-h6">Block 2</h1>
+
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+    <a href="#">sed diam nonumy eirmod</a>
+    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+    vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+    no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+    amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+    et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+    sanctus est Lorem ipsum dolor sit amet.
+  </div>
+  <div
+    class="s:py-5 s:d-hidden"
+    role="tabpanel"
+    aria-labelledby="tab-item-3"
+    id="content-block-3"
+  >
+    <h1 class="s:text-h6">Block 3</h1>
+
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+    <a href="#">sed diam nonumy eirmod</a>
+    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+    vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+    no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+    amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+    et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+    sanctus est Lorem ipsum dolor sit amet.
+  </div>
+  <div
+    class="s:py-5 s:d-hidden"
+    role="tabpanel"
+    aria-labelledby="tab-item-4"
+    id="content-block-4"
+  >
+    <h1 class="s:text-h6">Block 4</h1>
+
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+    <a href="#">sed diam nonumy eirmod</a>
+    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+    vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+    no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+    amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+    et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+    sanctus est Lorem ipsum dolor sit amet.
+  </div>
+  <div
+    class="s:py-5 s:d-hidden"
+    role="tabpanel"
+    aria-labelledby="tab-item-5"
+    id="content-block-5"
+  >
+    <h1 class="s:text-h6">Block 5</h1>
+
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+    <a href="#">sed diam nonumy eirmod</a>
+    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+    vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+    no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+    amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+    et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+    sanctus est Lorem ipsum dolor sit amet.
+  </div>
+  <div
+    class="s:py-5 s:d-hidden"
+    role="tabpanel"
+    aria-labelledby="tab-item-6"
+    id="content-block-6"
+  >
+    <h1 class="s:text-h6">Block 6</h1>
+
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+    <a href="#">sed diam nonumy eirmod</a>
+    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+    vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+    no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+    amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+    et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+    sanctus est Lorem ipsum dolor sit amet.
+  </div>
+  <script>
+    function showTab(id) {
+      document.querySelectorAll("[role=tabpanel]").forEach((element) => {
+        element.classList.add("s:d-hidden");
+      });
+      document.querySelector("#" + id).classList.remove("s:d-hidden");
+    }
+    showTab(document.querySelector("s-tabs").value);
+
+    document
+      .querySelector("s-tabs")
+      .addEventListener("sChangeTabs", (event) => {
+        showTab(event.detail);
+      });
+  </script>
+</div>

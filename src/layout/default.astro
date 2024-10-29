@@ -1,0 +1,25 @@
+---
+import Head from "./../partials/head.astro";
+import Democontent from "./../partials/democontent.astro";
+import { getAll } from "../api/icons";
+
+// Pfad zum Icon-Ordner
+const iconsPath = "./public/assets/icons";
+// Lade die Icons aus dem Ordner
+const icons = getAll(iconsPath);
+
+
+---
+
+<html lang="de">
+	<Head />
+	<body>
+		<Democontent />
+		<div class="s:container">
+			<h1 class="s:my-8">showing {icons.length} icons </h1>
+			<div class="s:d-grid s:gap-1 s:text-neutral-600" style="max-width: 100%; --g-cols: 8;">
+        <slot />
+			</div>
+		</div>
+	</body>
+</html>
