@@ -324,7 +324,9 @@
       });
       document.querySelector("#" + id).classList.remove("s:d-hidden");
     }
-    showTab(document.querySelector("s-tabs").value);
+    window.addEventListener("load", () => {
+      showTab(document.querySelector("s-tabs").value);
+    });
 
     document
       .querySelector("s-tabs")
