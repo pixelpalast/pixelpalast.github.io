@@ -53,7 +53,8 @@ import LayoutA11y from "./../layout/layout_a11y.astro";
         <div style="--col: 6">
           <label>
             Welche Farbe hat der Gegenstand?
-            <select name="farbe" aria-describedby="desc2">
+            <select name="farbe" aria-describedby="desc2" required>
+              <option value="">bitte wählen</option>
               <option value="gruen">gruen</option>
               <option value="blau">blau</option>
               <option value="rot">rot</option>
