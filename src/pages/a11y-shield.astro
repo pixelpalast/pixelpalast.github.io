@@ -1,0 +1,134 @@
+---
+import LayoutA11y from "./../layout/layout_a11y.astro";
+---
+
+<LayoutA11y>
+  <header class="s:container" aria-label="Tarifrechner Header">
+    <div class="s:py-8 s:prose">
+      <h1>Tarifrechner Haftpflicht</h1>
+      <p>
+        hier sollten vielleicht grunsätzliche infos stehen die ein blinder nicht
+        erfassen kann. zb dass alle felder (*) reqiured sind.
+      </p>
+    </div>
+  </header>
+  <div class="s:container s:prose s:pb-8">
+    <form method="get">
+      <div class="contentblock s:my-4 s:p-4 s:border-xs">
+        <div class="s:mb-8 s:border-b-xs">
+          <h2 class="tr__question">
+            Angaben zum Gegenstand
+            <small class="s:text-body-2 s:d-flex s:gap-0 s:items-center"
+              >Was verstehen wir als Gegenstand?</small
+            >
+          </h2>
+        </div>
+        <div style="--col: 6">
+          <input type="text" name="frage1" />
+        </div>
+        <div style="--col: 6">
+          <label for="">
+            Wie teuer war der Gegenstand?
+            <input type="text" name="frage1" />
+          </label>
+          <small id="desc1"
+            >Bitte aufgerundet auf volle 10er-Euro z.B. bei Kosten von 123,99€
+            runden sie bitte auf 130 €. Nur zahlen eingeben, kein €-Symbol.</small
+          >
+        </div>
+        <s-dialog
+          id="answer_detail1"
+          close-button="true"
+          dismissible="true"
+          headline="Headline via Prop"
+        >
+          <div>
+            Aus Usabilitysicht sollte immer als erstes die Abbrechen-Funktion
+            fokusiert sein. Der Nutzer sollte niemals ausversehen irgendwo
+            zustimmen können.
+          </div>
+        </s-dialog>
+      </div>
+      <div class="contentblock s:my-4 s:p-4 s:border-xs">
+        <div class="s:mb-8 s:border-b-xs">
+          <h2 class="tr__question">
+            Aufbewahrungsort
+            <small class="s:text-body-2 s:d-flex s:gap-0 s:items-center"
+              >Was verstehen wir als Aufbewahrungsort?
+              <s-icon-button
+                class="infoicon"
+                data-opens="answer_detail2"
+                size="xs"
+                icon="error"></s-icon-button></small
+            >
+          </h2>
+        </div>
+        <fieldset title="" aria-describedby="desc-para test3 desc-banner">
+          <p id="desc-para" aria-live="assertive">
+            <h3>nochmal ne headline</h3>
+            Bitte wählen Sie nachfolgend noch den Aufbewahrungsort der beschädigten
+            Gegenstände zum Schadenzeitpunkt aus. Eine Mehrfachauswahl ist möglich.
+          </p>
+          <s-banner
+            class="s:my-4"
+            icon="true"
+            id="desc-banner"
+            leading-text="Wichtige Zusatzinfo aus dem blauen Kasten"
+            supporting-text="Supporting Text aus blauem Kasten"
+          >
+            <s-icon slot="icon" variant="outlined" name="info" size="lg"
+            ></s-icon>
+          </s-banner>
+          <div class="s:d-grid">
+            <div style="--col: 12">
+              <s-choice-group>
+                <span slot="label">Wo ist es passiert?</span>
+                <s-checkbox value="Innerhalb des Gebäudes"
+                  ><span slot="label">Innerhalb des Gebäudes</span></s-checkbox
+                >
+                <s-checkbox value="im Garten"
+                  ><span slot="label">im Garten</span></s-checkbox
+                >
+                <s-checkbox value="auf der Terasse"
+                  ><span slot="label">auf der Terasse</span></s-checkbox
+                >
+                <s-checkbox value="sonstwo"
+                  ><span slot="label">sonstwo</span></s-checkbox
+                >
+                <span slot="helptext" id="test3"
+                  >Sie möchten den Schaden noch detaillierter beschreiben? Dies
+                  ist nicht nötig, Sie haben jedoch im letzten Schritt die
+                  Möglichkeit uns weitere Hinweise zukommen zu lassen.</span
+                >
+              </s-choice-group>
+            </div>
+          </div>
+          <s-button class="s:my-4" value="absenden" type="submit"
+            >Absenden</s-button
+          >
+        </fieldset>
+        <s-dialog
+          id="answer_detail2"
+          close-button="false"
+          dismissible="true"
+          headline="Headline 22222"
+        >
+          <div>
+            Aus Usabilitysicht sollte immer als erstes die Abbrechen-Funktion
+            fokusiert sein. Der Nutzer sollte niemals ausversehen irgendwo
+            zustimmen können.
+          </div>
+        </s-dialog>
+      </div>
+    </form>
+  </div>
+  <script is:inline>
+    const blocks = document.querySelectorAll(".infoicon");
+    blocks.forEach((blocky) => {
+      blocky.addEventListener("sClick", (e) => {
+        const comp = document.getElementById(e.target.dataset.opens);
+        if (comp) comp.open();
+      });
+    });
+  </script>
+</LayoutA11y>

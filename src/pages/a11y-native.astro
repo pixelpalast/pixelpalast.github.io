@@ -1,0 +1,93 @@
+---
+import LayoutA11y from "./../layout/layout_a11y.astro";
+---
+
+<LayoutA11y>
+  <style>
+    input,
+    select,
+    textarea {
+      border: 1px solid;
+      padding: 2px;
+    }
+  </style>
+  <header class="s:container s:bg-neutral-100" aria-label="header mit landmark">
+    <div class="s:py-8 s:prose">
+      <h6>header mit landmark</h6>
+      <p>
+        das hier sollten vielleicht grunsätzliche infos stehen die ein blinder
+        nicht erfassen kann. zb dass alle felder (*) reqiured sind.
+      </p>
+    </div>
+  </header>
+  <div class="s:container s:prose s:pb-8">
+    <form>
+      <div class="contentblock s:my-4 s:p-4 s:border-xs">
+        <div class="s:mb-8 s:border-b-xs">
+          <h6 class="tr__question">
+            Angaben zum Gegenstand
+            <small class="s:text-body-2 s:d-flex s:gap-0 s:items-center"
+              >Was verstehen wir als Gegenstand?</small
+            >
+          </h6>
+        </div>
+        <!-- <div style="--col: 6">
+          Wie teuer war der Gegenstand?
+          <input type="text" name="frage1" />
+        </div> -->
+        <div style="--col: 6">
+          <label>
+            Wie teuer war der Gegenstand?
+            <input
+              type="number"
+              name="frage2"
+              aria-describedby="desc1"
+              required
+            />
+          </label>
+          <p id="desc1">
+            Bitte aufgerundet auf volle 10er-Euro z.B. bei Kosten von 123,99€
+            runden sie bitte auf 130 €. Nur zahlen eingeben, kein €-Symbol.
+          </p>
+        </div>
+        <div style="--col: 6">
+          <label>
+            Welche Farbe hat der Gegenstand?
+            <select name="farbe" aria-describedby="desc2">
+              <option value="gruen">gruen</option>
+              <option value="blau">blau</option>
+              <option value="rot">rot</option>
+            </select>
+          </label>
+          <p id="desc2">Bitte waehlen, was am besten hinkommt</p>
+        </div>
+      </div>
+      <!-- <div class="s:my-4 s:p-4 s:border-xs">
+        <div class="s:mb-8 s:border-b-xs">
+          <h2 class="tr__question">
+            Aufbewahrungsort
+            <small class="s:text-body-2 s:d-flex s:gap-0 s:items-center"
+              >Was verstehen wir als Aufbewahrungsort?
+              <s-icon-button
+                class="infoicon"
+                data-opens="answer_detail2"
+                size="xs"
+                icon="error"></s-icon-button></small
+            >
+          </h2>
+        </div>
+        <fieldset title="" aria-describedby="desc-para test3 desc-banner">
+          <p id="desc-para" aria-live="assertive">
+            <h3>nochmal ne headline</h3>
+            Bitte wählen Sie nachfolgend noch den Aufbewahrungsort der beschädigten
+            Gegenstände zum Schadenzeitpunkt aus. Eine Mehrfachauswahl ist möglich.
+          </p>
+          <div class="s:d-grid">
+            <div style="--col: 12"></div>
+          </div>
+        </fieldset>
+      </div> -->
+      <s-button type="submit">Absenden</s-button>
+    </form>
+  </div>
+</LayoutA11y>
