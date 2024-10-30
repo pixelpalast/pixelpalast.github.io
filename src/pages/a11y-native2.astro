@@ -11,7 +11,11 @@ import LayoutA11y from "./../layout/layout_a11y.astro";
       padding: 2px;
     }
   </style>
-  <header class="s:container s:bg-neutral-100" aria-label="header mit landmark">
+  <header
+    class="s:container s:bg-neutral-100"
+    aria-label="header mit landmark"
+    role="banner"
+  >
     <div class="s:py-8 s:prose">
       <h6>header mit landmark</h6>
       <p>
@@ -20,9 +24,13 @@ import LayoutA11y from "./../layout/layout_a11y.astro";
       </p>
     </div>
   </header>
-  <div class="s:container s:prose s:pb-8">
+  <main class="s:container s:prose s:pb-8">
+    <h5>Hauptinhalt 123</h5>
     <form>
-      <div class="contentblock s:my-4 s:p-4 s:border-xs">
+      <section
+        class="contentblock s:my-4 s:p-4 s:border-xs"
+        aria-label="Gegenstandsformular"
+      >
         <div class="s:mb-8 s:border-b-xs">
           <h6 class="tr__question">
             Angaben zum Gegenstand
@@ -64,7 +72,7 @@ import LayoutA11y from "./../layout/layout_a11y.astro";
           </label>
           <p id="desc2">Bitte waehlen, was am besten hinkommt</p>
         </div>
-      </div>
+      </section>
       <!-- <div class="s:my-4 s:p-4 s:border-xs">
         <div class="s:mb-8 s:border-b-xs">
           <h2 class="tr__question">
@@ -92,5 +100,5 @@ import LayoutA11y from "./../layout/layout_a11y.astro";
       </div> -->
       <s-button type="submit">Absenden</s-button>
     </form>
-  </div>
+  </main>
 </LayoutA11y>
