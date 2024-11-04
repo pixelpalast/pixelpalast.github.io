@@ -13,11 +13,11 @@ import LayoutA11y from "./../layout/layout_a11y.astro";
   </style>
   <header
     class="s:container s:bg-neutral-100"
-    aria-label="header mit landmark"
+    aria-label="header mit rolle"
     role="banner"
   >
     <div class="s:py-8 s:prose">
-      <h6>header mit landmark</h6>
+      <h6>header mit rolle</h6>
       <p>
         das hier sollten vielleicht grunsätzliche infos stehen die ein blinder
         nicht erfassen kann. zb dass alle felder (*) reqiured sind.
@@ -44,21 +44,21 @@ import LayoutA11y from "./../layout/layout_a11y.astro";
           <input type="text" name="frage1" />
         </div> -->
         <div style="--col: 6">
-          <p id="desc1c">test 123</p>
+          <p id="beschreibung3">Beschreibung 3</p>
           <label>
             Wie teuer war der Gegenstand?
             <input
               type="number"
               name="frage2"
-              aria-describedby="desc1a desc1b desc1c"
+              aria-describedby="beschreibung1 beschreibung2 beschreibung3"
               required
             />
           </label>
-          <p id="desc1a">
-            Bitte aufgerundet auf volle 10er-Euro z.B. bei Kosten von 123,99€
-            runden sie bitte auf 130 €. Nur zahlen eingeben, kein €-Symbol.
+          <p id="beschreibung1">
+            Bitte aufgerundet auf volle 10er-Euro z.B. Nur zahlen eingeben, kein
+            €-Symbol.
           </p>
-          <p id="desc1b">test 123</p>
+          <p id="beschreibung2">Beschreibung 2</p>
         </div>
         <div style="--col: 6">
           <label>
