@@ -10,19 +10,34 @@ import LayoutA11y from "./../layout/layout_a11y.astro";
       border: 1px solid;
       padding: 2px;
     }
+    legend {
+      font-weight: 700;
+    }
+    fieldset {
+      background-color: #eee;
+      padding: 1rem;
+    }
   </style>
-  <header class="s:container s:bg-neutral-100" aria-label="header mit landmark">
+  <header
+    class="s:container s:bg-neutral-100"
+    aria-label="header mit rolle"
+    role="banner"
+  >
     <div class="s:py-8 s:prose">
-      <h6>header mit landmark</h6>
+      <h6>header mit rolle</h6>
       <p>
         das hier sollten vielleicht grunsätzliche infos stehen die ein blinder
         nicht erfassen kann. zb dass alle felder (*) reqiured sind.
       </p>
     </div>
   </header>
-  <div class="s:container s:prose s:pb-8">
+  <main class="s:container s:prose s:pb-8">
+    <h5>Hauptinhalt 123</h5>
     <form>
-      <div class="contentblock s:my-4 s:p-4 s:border-xs">
+      <section
+        class="contentblock s:my-4 s:p-4 s:border-xs"
+        aria-label="Gegenstandsformular"
+      >
         <div class="s:mb-8 s:border-b-xs">
           <h6 class="tr__question">
             Angaben zum Gegenstand
@@ -36,19 +51,21 @@ import LayoutA11y from "./../layout/layout_a11y.astro";
           <input type="text" name="frage1" />
         </div> -->
         <div style="--col: 6">
+          <p id="beschreibung3">Beschreibung 3</p>
           <label>
             Wie teuer war der Gegenstand?
             <input
               type="number"
               name="frage2"
-              aria-describedby="desc1"
+              aria-describedby="beschreibung1 beschreibung2 beschreibung3"
               required
             />
           </label>
-          <p id="desc1">
-            Bitte aufgerundet auf volle 10er-Euro z.B. bei Kosten von 123,99€
-            runden sie bitte auf 130 €. Nur zahlen eingeben, kein €-Symbol.
+          <p id="beschreibung1">
+            Bitte aufgerundet auf volle 10er-Euro z.B. Nur zahlen eingeben, kein
+            €-Symbol.
           </p>
+          <p id="beschreibung2">Beschreibung 2</p>
         </div>
         <div style="--col: 6">
           <label>
@@ -62,33 +79,69 @@ import LayoutA11y from "./../layout/layout_a11y.astro";
           </label>
           <p id="desc2">Bitte waehlen, was am besten hinkommt</p>
         </div>
-      </div>
-      <!-- <div class="s:my-4 s:p-4 s:border-xs">
-        <div class="s:mb-8 s:border-b-xs">
-          <h2 class="tr__question">
-            Aufbewahrungsort
-            <small class="s:text-body-2 s:d-flex s:gap-0 s:items-center"
-              >Was verstehen wir als Aufbewahrungsort?
-              <s-icon-button
-                class="infoicon"
-                data-opens="answer_detail2"
-                size="xs"
-                icon="error"></s-icon-button></small
-            >
-          </h2>
-        </div>
-        <fieldset title="" aria-describedby="desc-para test3 desc-banner">
-          <p id="desc-para" aria-live="assertive">
-            <h3>nochmal ne headline</h3>
-            Bitte wählen Sie nachfolgend noch den Aufbewahrungsort der beschädigten
-            Gegenstände zum Schadenzeitpunkt aus. Eine Mehrfachauswahl ist möglich.
-          </p>
-          <div class="s:d-grid">
-            <div style="--col: 12"></div>
+        <h3>variante: aria-radiogroup</h3>
+        <fieldset>
+          <legend>Persönliche Angaben</legend>
+          <label for="vorname">
+            Vorname: <input name="vorname" id="vorname" />
+          </label>
+          <label for="zuname">
+            Zuname: <input name="zuname" id="zuname" />
+          </label>
+          <hr />
+          <div role="radiogroup">
+            <label for="männl">
+              <input type="radio" name="geschlecht" id="männl" value="männl" />
+              männlich
+            </label>
+            <label for="weibl">
+              <input type="radio" name="geschlecht" id="weibl" value="weibl" />
+              weiblich
+            </label>
+            <label for="divers">
+              <input
+                type="radio"
+                name="geschlecht"
+                id="divers"
+                value="divers"
+              />
+              divers
+            </label>
           </div>
         </fieldset>
-      </div> -->
+        <h3>variante: multiple fieldsets</h3>
+        <fieldset>
+          <legend>Name</legend>
+          <label for="vorname">
+            Vorname: <input name="vorname2" id="vorname2" />
+          </label>
+          <label for="zuname">
+            Zuname: <input name="zuname2" id="zuname2" />
+          </label>
+        </fieldset>
+        <fieldset>
+          <legend>Geschlecht</legend>
+          <label for="männl">
+            <input type="radio" name="geschlecht2" id="männl2" value="männl" />
+            männlich
+          </label>
+          <label for="weibl">
+            <input type="radio" name="geschlecht2" id="weibl2" value="weibl" />
+            weiblich
+          </label>
+          <label for="divers">
+            <input
+              type="radio"
+              name="geschlecht2"
+              id="divers2"
+              value="divers"
+            />
+            divers
+          </label>
+        </fieldset>
+      </section>
+
       <s-button type="submit">Absenden</s-button>
     </form>
-  </div>
+  </main>
 </LayoutA11y>

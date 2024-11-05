@@ -11,26 +11,18 @@ import LayoutA11y from "./../layout/layout_a11y.astro";
       padding: 2px;
     }
   </style>
-  <header
-    class="s:container s:bg-neutral-100"
-    aria-label="header mit rolle"
-    role="banner"
-  >
+  <header class="s:container s:bg-neutral-100" aria-label="header mit landmark">
     <div class="s:py-8 s:prose">
-      <h6>header mit rolle</h6>
+      <h6>header mit landmark</h6>
       <p>
         das hier sollten vielleicht grunsätzliche infos stehen die ein blinder
         nicht erfassen kann. zb dass alle felder (*) reqiured sind.
       </p>
     </div>
   </header>
-  <main class="s:container s:prose s:pb-8">
-    <h5>Hauptinhalt 123</h5>
+  <div class="s:container s:prose s:pb-8">
     <form>
-      <section
-        class="contentblock s:my-4 s:p-4 s:border-xs"
-        aria-label="Gegenstandsformular"
-      >
+      <div class="contentblock s:my-4 s:p-4 s:border-xs">
         <div class="s:mb-8 s:border-b-xs">
           <h6 class="tr__question">
             Angaben zum Gegenstand
@@ -44,21 +36,19 @@ import LayoutA11y from "./../layout/layout_a11y.astro";
           <input type="text" name="frage1" />
         </div> -->
         <div style="--col: 6">
-          <p id="beschreibung3">Beschreibung 3</p>
           <label>
             Wie teuer war der Gegenstand?
             <input
               type="number"
               name="frage2"
-              aria-describedby="beschreibung1 beschreibung2 beschreibung3"
+              aria-describedby="desc1"
               required
             />
           </label>
-          <p id="beschreibung1">
-            Bitte aufgerundet auf volle 10er-Euro z.B. Nur zahlen eingeben, kein
-            €-Symbol.
+          <p id="desc1">
+            Bitte aufgerundet auf volle 10er-Euro z.B. bei Kosten von 123,99€
+            runden sie bitte auf 130 €. Nur zahlen eingeben, kein €-Symbol.
           </p>
-          <p id="beschreibung2">Beschreibung 2</p>
         </div>
         <div style="--col: 6">
           <label>
@@ -72,7 +62,7 @@ import LayoutA11y from "./../layout/layout_a11y.astro";
           </label>
           <p id="desc2">Bitte waehlen, was am besten hinkommt</p>
         </div>
-      </section>
+      </div>
       <!-- <div class="s:my-4 s:p-4 s:border-xs">
         <div class="s:mb-8 s:border-b-xs">
           <h2 class="tr__question">
@@ -100,5 +90,5 @@ import LayoutA11y from "./../layout/layout_a11y.astro";
       </div> -->
       <s-button type="submit">Absenden</s-button>
     </form>
-  </main>
+  </div>
 </LayoutA11y>
