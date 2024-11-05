@@ -46,10 +46,6 @@ import LayoutA11y from "./../layout/layout_a11y.astro";
             >
           </h6>
         </div>
-        <!-- <div style="--col: 6">
-          Wie teuer war der Gegenstand?
-          <input type="text" name="frage1" />
-        </div> -->
         <div style="--col: 6">
           <p id="beschreibung3">Beschreibung 3</p>
           <label>
@@ -89,7 +85,7 @@ import LayoutA11y from "./../layout/layout_a11y.astro";
             Zuname: <input name="zuname" id="zuname" />
           </label>
           <hr />
-          <div role="radiogroup">
+          <div role="radiogroup" aria-label="Geschlecht">
             <label for="männl">
               <input type="radio" name="geschlecht" id="männl" value="männl" />
               männlich
