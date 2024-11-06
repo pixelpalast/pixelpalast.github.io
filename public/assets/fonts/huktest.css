@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "huktest", "Arial", sans-serif;
+  font-family: "huktest";
   src:
     url("huktest.woff2?1442669") format("woff2"),
     url("huktest.woff?1442669") format("woff");
@@ -10,7 +10,7 @@
 
 [class^="icon-"]:before,
 [class*=" icon-"]:before {
-  font-family: "huktest";
+  font-family: "huktest", "Arial", sans-serif;
   font-style: normal;
   font-weight: normal;
   speak: never;
