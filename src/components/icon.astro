@@ -13,20 +13,6 @@ if (mode === 'webfont') {
 
 ---
 
-{ mode === 'webfont' && (
-    
-    <style>
-      .demo-icon {
-      }
-      .demo-icon::before {
-        -webkit-font-smoothing: none;
-        -webkit-font-smoothing: subpixel-antialiased;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-
-      }
-    </style>
-  )}
 { mode === 'mask' && (
     <style>    
       .icon-mask {
@@ -58,7 +44,6 @@ if (mode === 'webfont') {
         { mode === 'webfont' && (
           <i class={`s:d-flex s:justify-center demo-icon icon-${icon.name}`} style="font-size: 24px;"></i>
         )}
-        {/* <code style="font-size: 10px;">{icon.name.split('.')[0]}</code> */}
       </div>
     </>
   
