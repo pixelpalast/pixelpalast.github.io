@@ -1,29 +1,45 @@
+---
+
+const {mode} = Astro.props;
+---
+
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shield Icon Test</title>
+    <title>{mode} - Shield Icon Test</title>
+    { mode === 'fetch' && (
     <script type="text/javascript">
       window.shieldBasePath =
         "https://static.c.huk24.de/shield/components/1.5/lib";
     </script>
-    <link
-      rel="stylesheet"
-      href="https://static.c.huk24.de/shield/css-framework/1.5/css/all.css"
-    />
-    <!-- all in one mandanten css -->
-    <link
-      rel="stylesheet"
-      href="https://static.c.huk24.de/shield/themes/1.5/huk24/theme.css"
-    />
-    <!-- oder einzelne css files -->
-    <link
-      rel="stylesheet"
-      href="https://static.c.huk24.de/shield/themes/1.5/huk24/tokens.css"
-    />
     <script
       type="module"
       src="https://static.c.huk24.de/shield/components/1.5/lib/lib.esm.js"
     ></script>
+    )}
+    <link
+      rel="stylesheet"
+      href="https://static.c.huk24.de/shield/css-framework/1.5/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://static.c.huk24.de/shield/themes/1.5/huk24/theme.css"
+    />
+    { mode === 'webfont' && (
+        <link rel="stylesheet" href="/assets/fonts/huktest.css" />
+    )}
+    { mode === 'mask' && (
+    <style>    
+      .icon-mask {
+        width: 24px;
+        height: 24px;
+        mask-repeat: no-repeat;
+        mask-size: contain;
+        background-color: currentColor;
+        mask-image: var(--icon-url);
+      }
+    </style>
+  )}
   </head>
 </html>

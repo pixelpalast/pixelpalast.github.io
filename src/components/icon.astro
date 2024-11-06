@@ -1,50 +1,55 @@
 ---
-import { getAll } from "../api/icons";
+import {getAll} from "../api/icons";
 
 const iconsPath = "./public/assets/icons";
 const icons = getAll(iconsPath);
-const { mode } = Astro.props;
-
-if (mode === 'webfont') {
-    import('./../../public/assets/fonts/huktest.css').then((fs) => {
-    // use fs
-  });
-} 
-
+const {mode} = Astro.props;
 ---
 
-{ mode === 'mask' && (
-    <style>    
-      .icon-mask {
-        width: 24px;
-        height: 24px;
-        mask-repeat: no-repeat;
-        mask-size: contain;
-        background-color: currentColor;
-        mask-image: var(--icon-url);
-      }
-    </style>
-  )}
-
-	{icons.map((icon) => (
+{
+  icons.map((icon) => (
     <>
       <div class="s:text-center s:d-flex s:flex-col s:bg-neutral-100 s:border-radius-sm s:p-2 s:py-8">
-        { mode === 'fetch' && (
-          <s-icon class="s:mx-a" size="md" name={icon.name.split('.')[0]} variant={icon.name.split('.')[1]}></s-icon>
+        {mode === "fetch" && (
+          <s-icon
+            class="s:mx-a"
+            size="md"
+            name={icon.name.split(".")[0]}
+            variant={icon.name.split(".")[1]}
+          />
         )}
-        { mode === 'native' && (
-          <img class="s:mx-a" width="24" height="24" src={icon.path} alt={icon.name} />
+        {mode === "native" && (
+          <img
+            class="s:mx-a"
+            width="24"
+            height="24"
+            src={icon.path}
+            alt={icon.name}
+          />
         )}
-        { mode === 'native-fetchprio' && (
-          <img class="s:mx-a" fetchpriority="high" width="24" height="24" src={icon.path} alt={icon.name} />
+        {mode === "native-fetchprio" && (
+          <img
+            class="s:mx-a"
+            fetchpriority="high"
+            width="24"
+            height="24"
+            src={icon.path}
+            alt={icon.name}
+          />
         )}
-        { mode === 'mask' && (
-          <div class="s:mx-a icon-mask" style={`--icon-url: url(${icon.path})`}></div>
+        {mode === "mask" && (
+          <div
+            class="s:mx-a icon-mask"
+            style={`--icon-url: url(${icon.path})`}
+          />
         )}
-        { mode === 'webfont' && (
-          <i class={`s:d-flex s:justify-center demo-icon icon-${icon.name}`} style="font-size: 24px;"></i>
+        {mode === "webfont" && (
+          <i
+            class={`s:d-flex s:justify-center demo-icon icon-${icon.name}`}
+            style="font-size: 24px;"
+          />
         )}
       </div>
     </>
-  
-))}
+  ))
+}

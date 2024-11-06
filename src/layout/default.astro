@@ -1,16 +1,16 @@
 ---
 import Head from "./../partials/head.astro";
-import Democontent from "./../partials/democontent.astro";
 import {getAll} from "../api/icons";
 
 // Pfad zum Icon-Ordner
 const iconsPath = "./public/assets/icons";
 // Lade die Icons aus dem Ordner
 const icons = getAll(iconsPath);
+const {mode} = Astro.props;
 ---
 
 <html lang="de">
-  <Head />
+  <Head mode={mode} />
   {
     /*
   <style is:global>
