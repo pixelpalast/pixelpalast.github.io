@@ -1,9 +1,11 @@
 @font-face {
-  font-family: "huktest";
-  src: url("huktest.woff2?1442669") format("woff2"),
+  font-family: "huktest", "Arial", sans-serif;
+  src:
+    url("huktest.woff2?1442669") format("woff2"),
     url("huktest.woff?1442669") format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 [class^="icon-"]:before,
