@@ -117,15 +117,15 @@ import LayoutA11y from "./../layout/layout_a11y.astro";
         </fieldset>
         <fieldset>
           <legend>Geschlecht</legend>
-          <label for="männl">
+          <label for="männl2">
             <input type="radio" name="geschlecht2" id="männl2" value="männl" />
             männlich
           </label>
-          <label for="weibl">
+          <label for="weibl2">
             <input type="radio" name="geschlecht2" id="weibl2" value="weibl" />
             weiblich
           </label>
-          <label for="divers">
+          <label for="divers2">
             <input
               type="radio"
               name="geschlecht2"
@@ -137,7 +137,9 @@ import LayoutA11y from "./../layout/layout_a11y.astro";
         </fieldset>
       </section>
 
-      <s-button type="submit">Absenden</s-button>
+      <button type="submit" style="background-color: #ddd; padding: 3px 9px;"
+        >Absenden</button
+      >
     </form>
   </main>
 </LayoutA11y>
