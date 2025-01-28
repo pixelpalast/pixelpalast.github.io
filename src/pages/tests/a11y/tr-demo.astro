@@ -1,0 +1,37 @@
+---
+import LayoutShield from "./../../../layout/shield.astro";
+import Card1 from "./../../../partials/tr-demo/card-1.astro";
+import Card2 from "./../../../partials/tr-demo/card-2.astro";
+import Dialogs1 from "./../../../partials/tr-demo/dialogs-1.astro";
+import TrHeader from "./../../../partials/tr-demo/tr-header.astro";
+---
+
+<LayoutShield>
+  <TrHeader>
+    <main class="s:container-narrow s:py-12">
+      <div class="s:prose">
+        <h1 class="s:p-4 s:text-body-1 s:text-uppercase">Tarifrechner XY (h1)</h1>
+        <br />
+        <p>Wir bauen hier mal eine Tarifrechner-Demo, um a11y daran abzutesten und weitere Problemfelder zu identifizieren.</p>
+      </div>
+      <form method="get" action="/">
+        <Card1 />
+        <Card2 />
+        <Dialogs1 />
+        <script>
+          (async () => {
+            document.querySelectorAll("[data-dialog]").forEach((iconbutton) => {
+              iconbutton.addEventListener("click", (e) => {
+                e.stopPropagation();
+                const dataDialog = (iconbutton as HTMLElement).dataset.dialog;
+                if (!dataDialog) return;
+                const le = document.getElementById(dataDialog);
+                le.open();
+              });
+            });
+          })();
+        </script>
+      </form>
+    </main>
+  </TrHeader>
+</LayoutShield>

@@ -1,0 +1,83 @@
+---
+
+---
+
+<div class="s:paper s:mt-8 s:p-4 s:box-shadow-xs s:prose">
+  <h2 class="s:text-body-1 s:text-uppercase">Reisedauer (h2)</h2>
+  <hr class="s:divider" />
+  <h3 class="s:text-subtitle">Welche Reisen willst versichern? (h3)</h3>
+
+  <s-choice-list direction="horizontal" nowrap="true" required>
+    <s-choice-list-item value="option-1" choice-type="none">
+      <div slot="action">
+        <s-icon-button size="sm" icon="info" data-dialog="dia-yes"></s-icon-button>
+      </div>
+      <div slot="content" class="s:d-flex s:flex-1 s:flex-col s:items-center s:text-center">
+        <s-icon size="xl" name="location-on"></s-icon>
+        <div>
+          <b>Alle Reisen eines Jahres</b>
+        </div>
+      </div>
+    </s-choice-list-item>
+    <s-choice-list-item value="option-2">
+      <div slot="content" class="s:d-flex s:flex-1 s:flex-col s:items-center s:text-center">
+        <s-icon size="xl" name="monitoring"></s-icon>
+        <div>
+          <b>Einzelne Langzeitreise</b>
+        </div>
+      </div>
+      <span slot="additionalContent">
+        <div class="s:mx-16 s:items-center s:justify-center">
+          <s-button color="accent" full-width="true" data-dialog="dia-add"><s-icon name="add"></s-icon> neue Folgekrankheit anlegen</s-button>
+        </div>
+      </span>
+    </s-choice-list-item>
+  </s-choice-list>
+  <div class="s:mb-6"></div>
+  <s-choice-list required>
+    <s-choice-list-item value="option-1" input-left="true" leading-text="Alle Reisen eines Jahres" supporting-text="Reisedauer je Reise max. 8 Wochen">
+      <div class="s:d-flex s:items-center s:justify-center" slot="action">
+        <s-tooltip open-on="click">
+          <p slot="content">Das ist ein Paragraph zum Testen. Wenn er zu lang ist, kann man ihn auch via --tooltip-max-width noch einschränken. Von Haus aus setzen wir max-width: 40ch</p>
+          <s-icon size="sm" name="info"></s-icon>
+        </s-tooltip>
+      </div>
+
+      <div slot="additionalContent" class="s:pt-8">
+        <s-text-field id="date-begin" full-width input-type="date" aria-labelledby="start-label">
+          <span slot="label">Wann soll Ihr Versicherungsschutz beginnen?(label)</span>
+          <span slot="helptext">Geht erst ab morgen.</span>
+          <s-icon slot="iconEndInner" name="calendar-month" size="md"></s-icon>
+        </s-text-field>
+      </div>
+    </s-choice-list-item>
+
+    <s-choice-list-item value="option-2" leading-text="Einzelne Langzeitreise" supporting-text="Reisedauer: 8 Wochen bis 1 Jahr" input-left="true">
+      <div class="s:d-flex s:items-center s:justify-center" slot="action">
+        <s-badge color="positive" content="33% Der Helgas wählen das!" icon="lightbulb" icon-variant="filled" inline="true"></s-badge>
+      </div>
+      <div slot="additionalContent">
+        <div class="s:pt-8 s:d-grid s:gap-2" style="--g-cols: 2;">
+          <s-text-field id="date-begin" full-width input-type="date" aria-labelledby="start-label">
+            <span slot="label">Wann beginnt ihre Reise?(label)</span>
+            <span slot="helptext">Geht erst ab morgen.</span>
+            <s-icon slot="iconEndInner" name="calendar-month" size="md"></s-icon>
+          </s-text-field>
+          <s-text-field id="date-begin" full-width input-type="date" aria-labelledby="start-label">
+            <span slot="label">Reise-Ende?(label)</span>
+            <span slot="helptext">Muss nach Reisebeginn liegen</span>
+            <s-icon slot="iconEndInner" name="calendar-month" size="md"></s-icon>
+          </s-text-field>
+        </div>
+        <h3 class="s:text-subtitle">Reisen Sie nach Canada oder in die USA? (h3)</h3>
+        <s-choice-list direction="horizontal">
+          <s-choice-list-item value="option-2-a" name="hans" input-left="true" leading-text="Ja"></s-choice-list-item>
+          <s-choice-list-item value="option-2-b" input-left="true" leading-text="Nein"></s-choice-list-item>
+        </s-choice-list>
+      </div>
+    </s-choice-list-item>
+    <span slot="helptext">Achtung achtung Helptext</span>
+  </s-choice-list>
+  <div class="s:mb-6"></div>
+  <s-button type="submit">Submit</s-button>
+</div>

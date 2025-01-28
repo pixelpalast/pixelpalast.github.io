@@ -1,0 +1,44 @@
+---
+
+---
+
+<div class="s:paper s:mt-8 s:p-4 s:box-shadow-xs s:prose">
+  <h2 class="s:text-body-1 s:text-uppercase">Sport- und Freizeitaktivitäten (h2)</h2>
+  <hr class="s:divider" />
+  <h3 class="s:text-subtitle">Leiden Sie an HUK-COBURG? (h3)</h3>
+
+  <p class="s:my-4">Betreiben Sie Sport- und Freizeitaktivitäten, bei denen Sie einem erhöhten Verletzungsrisiko ausgesetzt sind? Breiten- und Fitnesssport wie z.B. Fuß- und Handball, Joggen, Radfahren, Wandern, Schwimmen, Skifahren und Snowboarden auf gesicherten Pisten müssen Sie nicht angeben. Dasselbe gilt für einmalige Aktivitäten im Urlaub.</p>
+
+  <s-choice-list required
+    ><!--  severity="critical" -->
+    <s-choice-list-item value="option-2" leading-text="Nein" input-left="true">
+      <div class="s:h-6 s:w-6 s:d-flex s:items-center s:justify-center" slot="action">
+        <s-icon-button size="md" icon="help" icon-variant="outlined" variant="text" data-dialog="dia-no"></s-icon-button>
+      </div>
+    </s-choice-list-item>
+    <s-choice-list-item value="option-3" leading-text="disabled" disabled input-left="true">
+      <div class="s:h-6 s:w-6 s:d-flex s:items-center s:justify-center" slot="action">
+        <s-icon-button size="sm" icon="info" data-dialog="dia-yes"></s-icon-button>
+      </div>
+    </s-choice-list-item>
+    <s-choice-list-item value="option-1" input-left="true">
+      <div class="s:h-6 s:w-6 s:d-flex s:items-center s:justify-center" slot="action">
+        <s-icon-button size="sm" icon="info" data-dialog="dia-yes"></s-icon-button>
+      </div>
+      <span slot="content">Ja</span>
+      <span slot="additionalContent">
+        <div class="s:mx-16 s:items-center s:justify-center">
+          <s-button color="accent" full-width="true" data-dialog="dia-add"><s-icon name="add"></s-icon> neue Folgekrankheit anlegen</s-button>
+        </div>
+      </span>
+    </s-choice-list-item>
+    <span slot="helptext">Achtung achtung Helptext</span>
+  </s-choice-list>
+  <s-banner class="s:my-4" color="primary" leading-text="Fachabteilungs-Banner" supporting-text="Das ist der Supporting-Text" severity="warning" variant="filled-subdued">
+    <s-icon slot="icon" variant="outlined" name="info" size="lg"></s-icon>
+    <div slot="content">
+      <div class="s:text-body-1 s:text-bold s:mb-2">Obacht!</div>
+      <p class="s:text-body-2">Laut der Fachabteilung braucht man zusätzlich manchmal noch diese Banner</p>
+    </div>
+  </s-banner>
+</div>
