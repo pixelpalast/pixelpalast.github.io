@@ -18,12 +18,12 @@ import TrHeader from "./../../../partials/tr-demo/tr-header.astro";
         <Card1 />
         <Card2 />
         <Dialogs1 />
-        <script>
+        <script is:inline>
           (async () => {
             document.querySelectorAll("[data-dialog]").forEach((iconbutton) => {
               iconbutton.addEventListener("click", (e) => {
                 e.stopPropagation();
-                const dataDialog = (iconbutton as HTMLElement).dataset.dialog;
+                const dataDialog = iconbutton.dataset.dialog;
                 if (!dataDialog) return;
                 const le = document.getElementById(dataDialog);
                 le.open();

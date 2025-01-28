@@ -1,10 +1,11 @@
 <div class="s:d-flex s:flex-col">
   <div class="demo-header-container s:paper s:box-shadow-lg s:pt-1 s:sticky s:top-0 s:z-25">
-    asdasd
-    <div class="demo-header-animate-wrapper">
+    <div class="s:container-narrow xs:d-flex">
+      <!-- <div class="demo-header-animate-wrapper">
       <div class="demo-header-animate-inner"></div>
-    </div>
-    <div>
+    </div> -->
+      <img class="s:m-8 s:ml-0" style="width: 150px;" src="https://www.huk24.de/stylelib/3/img/logos/logo-sm.svg" alt="" />
+
       <div class="demo-nav-container s:m-a s:px-4">
         <div class="s:d-flex s:flex-col s:gap-0 s:text-nowrap s:pt-1">
           <s-badge class="s:self-end" content="Vouchertext" inline="true" color="accent"></s-badge>
@@ -89,7 +90,8 @@
     </div>
   </footer>
 </div>
-<script>
+
+<script is:inline>
   // It's just a Demo
   const header = document.querySelector(".demo-header-container");
   const initOffset = 100;
